@@ -274,7 +274,8 @@ Panels are arranged using grid.arrange and exported as a publication-ready PNG.
 **Final Notes**
 
 This project brings together multiple skills in exploratory analysis, graphical representation, kinetic modeling, and biological interpretation. Every plot has been constructed with clarity and biological relevance in mind.
-<img width="1144" height="804" alt="image" src="https://github.com/user-attachments/assets/8cbba86c-b6c2-4661-828a-52f8a2350ff2" />
+
+<img width="975" height="750" alt="Rplot11" src="https://github.com/user-attachments/assets/836249d6-85ab-4eea-a8e9-f410c2bd374a" />
 
 
 If you intend to publish the outputs (e.g., on LinkedIn or GitHub), the multi-panel figure exported in Task 8 makes a great visual summary.
