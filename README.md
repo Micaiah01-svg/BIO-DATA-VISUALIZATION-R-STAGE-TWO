@@ -62,6 +62,8 @@ pheatmap(
 * Clustering rows and columns groups together patterns that behave similarly.
 * A smooth gradient helps quickly distinguish high vs. low expression.
 
+  <img width="1144" height="804" alt="image" src="https://github.com/user-attachments/assets/f452675c-5c60-4d92-bc46-d67dbeef4e6e" />
+
 **1B. Volcano Plot of Differential Expression (Chromosome 22)**
 
 Load DEG dataset:
@@ -89,6 +91,8 @@ ggplot(deg, aes(x = log2FoldChange, y = -log10(PAdj), color = significance)) +
 * –log10(Padj) emphasizes low p-values (strong significance).
 * Volcano plots show a clean contrast between **effect size** and **statistical confidence**.
 
+<img width="1144" height="804" alt="image" src="https://github.com/user-attachments/assets/d45e4afc-67b7-4cdb-98c7-0b203ef403fa" />
+
 **PART 2 — Breast Cancer Diagnostic Data Exploration**
 
 This dataset comes from the Wisconsin Breast Cancer Diagnostic dataset.
@@ -108,6 +112,8 @@ ggplot(bc, aes(radius\_mean, texture\_mean, color = diagnosis)) +
 
 These two features are among the most diagnostic.
 Malignant samples tend to form **distinct clusters**.
+
+<img width="1144" height="804" alt="image" src="https://github.com/user-attachments/assets/c97d71d5-8b30-42a3-b32a-bf797b364dff" />
 
 **2D. Correlation Heatmap of Six Key Features**
 
@@ -130,6 +136,8 @@ ggplot(melt(cor\_matrix), aes(Var1, Var2, fill = value)) +
 * Radiological features such as radius, perimeter, and area are strongly correlated.
 * Smoothness and compactness capture **texture characteristics** rather than shape.
 
+<img width="1144" height="804" alt="image" src="https://github.com/user-attachments/assets/a715a180-19fc-4b6d-a25d-10ded41263c7" />
+
 **2E. Scatter Plot — Smoothness vs Compactness**
 
 ggplot(bc, aes(smoothness\_mean, compactness\_mean, color = diagnosis)) +
@@ -141,6 +149,8 @@ ggplot(bc, aes(smoothness\_mean, compactness\_mean, color = diagnosis)) +
 This reveals structure between two texture-based features.
 Malignant tumors often show higher compactness.
 
+<img width="1144" height="804" alt="image" src="https://github.com/user-attachments/assets/f633119b-29d6-4a6b-a932-128d2ba339ea" />
+
 **2F. Density Plot — Area Mean**
 
 ggplot(bc, aes(area\_mean, fill = diagnosis)) +
@@ -151,6 +161,11 @@ ggplot(bc, aes(area\_mean, fill = diagnosis)) +
 
 Density curves show differences in **distribution** rather than individual values.
 Malignant tumors generally have larger area measurements.
+
+<img width="1144" height="804" alt="image" src="https://github.com/user-attachments/assets/500c8189-c450-4029-b05d-20d623a86565" />
+
+
+
 
 **PART 3 — HackBio Stage 2 Tasks**
 
@@ -167,6 +182,9 @@ p2a <- ggplot(df\_a, aes(cell\_type, new\_ratio, fill = cell\_type)) +
 * Boxplots summarize **relative abundance** of immune cells.
 * Outliers show rare or burst-like populations.
 * Rotated labels improve readability when cell types are many.
+
+* <img width="850" height="791" alt="image" src="https://github.com/user-attachments/assets/e9a2da90-79c7-47b7-945e-ce5feba9a50a" />
+
 
 **Task 2 — Panel 2b: Half-Life vs Alpha (Kinetic Regimes)**
 
@@ -188,6 +206,10 @@ df\_b$log\_alpha <- log2(df\_b$alpha)
 
 These kinetic regimes describe temporal immune behavior.
 
+<img width="843" height="799" alt="image" src="https://github.com/user-attachments/assets/96fd3c32-7d93-47a4-b538-16cad2e4bec0" />
+
+
+
 **Task 3 — Panel 2c: Heatmap Across Cell Types & Time**
 
 This heatmap features:
@@ -201,12 +223,17 @@ This heatmap features:
 Time is a **fixed biological sequence**, so it should not be rearranged.
 Clustering genes reveals shared transcriptional programs.
 
+<img width="955" height="795" alt="image" src="https://github.com/user-attachments/assets/875d79a7-573e-4d27-a6a9-86bcebf555e7" />
+
+
 **Task 4 — Panel 2d: Pathway Enrichment Heatmap**
 
 **Conceptual Checks**
 
 * No clustering: pathway order is biologically curated.
 * Diverging palette: values span **negative (down)** to **positive (up) enrichment**, requiring a centered color scale.
+
+<img width="953" height="798" alt="image" src="https://github.com/user-attachments/assets/7f16ccf0-26de-4976-af19-c94130f19c03" />
 
 **Task 5 — Bubble Plot of Kinetic Regimes**
 
@@ -218,6 +245,8 @@ geom\_point(aes(size = count, color = stage))
 
 The plot communicates which kinetic regimes are populated heavily or sparsely—an overview of system-level behavior.
 
+<img width="960" height="795" alt="image" src="https://github.com/user-attachments/assets/4bd086a9-95ba-4196-af36-75e0a4b843f5" />
+
 **Task 6 — Stacked Barplot (B vs Plasma)**
 
 geom\_bar(position = "stack")
@@ -227,12 +256,16 @@ geom\_bar(position = "stack")
 Stacked bars emphasize the **relative fractions of two cell types**, not their absolute numbers.
 Side-by-side bars wouldn’t show how they divide a shared total.
 
+<img width="958" height="791" alt="image" src="https://github.com/user-attachments/assets/04554ce1-b16e-42e7-9b09-d0c53a22584f" />
+
 **Task 7 — Directed Cell–Cell Interaction Network**
 
 **Conceptual Checks**
 
 * The graph is **directed** because ligand–receptor communication flows from sender → receiver.
 * Edge weight represents **interaction strength**, such as signaling magnitude.
+
+<img width="957" height="794" alt="image" src="https://github.com/user-attachments/assets/59446775-b9ca-4e2e-a7c7-65776cfcd3d8" />
 
 **Task 8 — Final Multi-Panel Assembly**
 
